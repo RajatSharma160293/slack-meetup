@@ -136,6 +136,7 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
       request(postOptions, (error, response, body) => {
           if (error){
               // handle errors as you see fit
+              console.log(error);
           }
       })
       // sendMessageToSlackResponseURL(responseURL, JSON.stringify(message))
