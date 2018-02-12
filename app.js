@@ -127,7 +127,7 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
 
       var postOptions = {
           uri: responseURL,
-          method: 'GET',
+          method: 'POST',
           headers: {
               'Content-type': 'application/json'
           },
