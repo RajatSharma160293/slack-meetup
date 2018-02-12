@@ -85,46 +85,46 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
     var responseURL = 'https://slack.com/api/chat.postMessage'
     if (reqBody.token != '3mjnNXTEIxqWOkmjpnhEBlGn'){
       res.status(403).end("Access forbidden")
-    }else{
-      var message = {
-        "token": reqBody.token,
-        "channel": reqBody.channel_id,
-        "as_user": true,
-        "username": "Meetup App",
-        "text": "This is a query from Meetup App",
-        "attachments": [
-          {
-                "text": "Coming to meeting today?",
-                "fallback": "Shame... buttons aren't supported in this land",
-                "callback_id": "button_tutorial",
-                "color": "#3AA3E3",
-                "attachment_type": "default",
-                "actions": [
-                    {
-                        "name": "yes",
-                        "text": "yes",
-                        "type": "button",
-                        "value": "yes"
-                    },
-                    {
-                        "name": "no",
-                        "text": "no",
-                        "type": "button",
-                        "value": "no"
-                    },
-                    {
-                        "name": "maybe",
-                        "text": "maybe",
-                        "type": "button",
-                        "value": "maybe",
-                        "style": "danger"
-                    }
-                ]
+    } else {
+      var attachments = [{
+        fallback: "buttons aren't supported in this land",
+        title: "meeting",
+        text: "Coming to meeting today?",
+        color: "#3964db",
+        callback_id: "button_tutorial",
+        attachment_type: "default",
+        actions: [
+            {
+                name: "yes",
+                text: "yes",
+                type: "button",
+                value: "yes"
+            },
+            {
+                name: "no",
+                text: "no",
+                type: "button",
+                value: "no"
+            },
+            {
+                name: "maybe",
+                text: "maybe",
+                type: "button",
+                value: "maybe",
+                style: "danger"
             }
         ]
+      }];
+      var message = {
+        token: reqBody.token,
+        channel: reqBody.channel_id,
+        as_user: true,
+        username: "Meetup App",
+        attachments: JSON.stringify(attachments),
+        text: reqBody.text
       }
       console.log(reqBody);
-      sendMessageToSlackResponseURL(responseURL, message)
+      sendMessageToSlackResponseURL(responseURL, JSON.stringify(message))
     }
 })
 
