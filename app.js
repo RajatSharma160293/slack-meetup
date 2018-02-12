@@ -87,31 +87,31 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
       res.status(403).end("Access forbidden")
     } else {
       var attachments = [{
-        fallback: "buttons aren't supported in this land",
-        title: "meeting",
-        text: "Coming to meeting today?",
-        color: "#3964db",
-        callback_id: "button_tutorial",
-        attachment_type: "default",
-        actions: [
+        "fallback": "buttons aren't supported in this land",
+        "title": "meeting",
+        "text": "Coming to meeting today?",
+        "color": "#3964db",
+        "callback_id": "button_tutorial",
+        "attachment_type": "default",
+        "actions": [
             {
-                name: "yes",
-                text: "yes",
-                type: "button",
-                value: "yes"
+                "name": "yes",
+                "text": "yes",
+                "type": "button",
+                "value": "yes"
             },
             {
-                name: "no",
-                text: "no",
-                type: "button",
-                value: "no"
+                "name": "no",
+                "text": "no",
+                "type": "button",
+                "value": "no"
             },
             {
-                name: "maybe",
-                text: "maybe",
-                type: "button",
-                value: "maybe",
-                style: "danger"
+                "name": "maybe",
+                "text": "maybe",
+                "type": "button",
+                "value": "maybe",
+                "style": "danger"
             }
         ]
       }];
