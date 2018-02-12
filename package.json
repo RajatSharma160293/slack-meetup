@@ -1,0 +1,25 @@
+{
+  "name": "meetup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RajatSharma160293/slack-meetup.git"
+  },
+  "author": "rajat sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RajatSharma160293/slack-meetup/issues"
+  },
+  "homepage": "https://github.com/RajatSharma160293/slack-meetup#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "request": "^2.83.0"
+  }
+}
