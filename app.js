@@ -87,7 +87,7 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
       res.status(403).end("Access forbidden")
     }else{
       var message = {
-        "token": reqBody.token,
+        "token": 'xoxp-253912083681-289504108851-313557509410-da9fa0e44c8b105de0e971df3e51fcd8',
         "channel": "#dummy-app",
         "as_user": true,
         "username": "Meetup App"
