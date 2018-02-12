@@ -55,7 +55,7 @@ app.post('/slack/slash-commands/send-me-buttons', urlencodedParser, (req, res) =
 
 function sendMessageToSlackResponseURL(responseURL, JSONmessage){
     var postOptions = {
-        uri: responseURL,
+        uri: 'https://slack.com/api/chat.postMessage',
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
