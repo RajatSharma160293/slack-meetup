@@ -90,7 +90,7 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
         "token": 'xoxp-253912083681-289504108851-313557509410-da9fa0e44c8b105de0e971df3e51fcd8',
         "channel": "#dummy-app",
         "as_user": true,
-        "username": "Meetup App"
+        "username": "Meetup App",
         "text": "This is a query from Meetup App",
         "attachments": [
           {
