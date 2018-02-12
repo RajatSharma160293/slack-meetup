@@ -2,10 +2,11 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
+var path = require('path');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 app.get('/', (req,res) => {
-  res.status(200).send("Yes it works");
+  res.status(200).sendFile(path.join(__dirname + '/sample.html'));
 })
 
 app.post('/slack/slash-commands/send-me-buttons', urlencodedParser, (req, res) =>{
