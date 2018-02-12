@@ -4,11 +4,15 @@ var express = require('express');
 var app = express();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+app.get('/', (req,res) => {
+  res.status(200).send("Yes it works");
+})
+
 app.post('/slack/slash-commands/send-me-buttons', urlencodedParser, (req, res) =>{
     res.status(200).end() // best practice to respond with empty 200 status code
     var reqBody = req.body
     var responseURL = reqBody.response_url
-    if (reqBody.token != 3mjnNXTEIxqWOkmjpnhEBlGn){
+    if (reqBody.token != '3mjnNXTEIxqWOkmjpnhEBlGn'){
         res.status(403).end("Access forbidden")
     }else{
         var message = {
