@@ -116,12 +116,12 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
         ]
       }];
       var message = {
-        token: reqBody.token,
-        channel: reqBody.channel_id,
+        token: 'xoxp-253912083681-289504108851-313557509410-da9fa0e44c8b105de0e971df3e51fcd8',
+        channel: '#dummy-app',
         as_user: true,
         username: "Meetup App",
         attachments: JSON.stringify(attachments),
-        text: reqBody.text
+        text: "hello"
       }
       console.log(reqBody);
       sendMessageToSlackResponseURL(responseURL, JSON.stringify(message))
