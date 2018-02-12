@@ -88,7 +88,7 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
     }else{
       var message = {
         "token": reqBody.token,
-        "channel": "@daniel",
+        "channel": "#dummy-app",
         "as_user": true,
         "username": "Meetup App"
         "text": "This is a query from Meetup App",
