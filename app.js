@@ -8,7 +8,7 @@ app.post('/slack/slash-commands/send-me-buttons', urlencodedParser, (req, res) =
     res.status(200).end() // best practice to respond with empty 200 status code
     var reqBody = req.body
     var responseURL = reqBody.response_url
-    if (reqBody.token != YOUR_APP_VERIFICATION_TOKEN){
+    if (reqBody.token != 3mjnNXTEIxqWOkmjpnhEBlGn){
         res.status(403).end("Access forbidden")
     }else{
         var message = {
