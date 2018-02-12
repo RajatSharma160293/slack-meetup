@@ -87,8 +87,8 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
       res.status(403).end("Access forbidden")
     }else{
       var message = {
-        "token": 'xoxp-253912083681-289504108851-313557509410-da9fa0e44c8b105de0e971df3e51fcd8',
-        "channel": "#dummy-app",
+        "token": reqBody.token,
+        "channel": reqBody.channel_id,
         "as_user": true,
         "username": "Meetup App",
         "text": "This is a query from Meetup App",
@@ -128,6 +128,6 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
     }
 })
 
-
+//'xoxp-253912083681-289504108851-313557509410-da9fa0e44c8b105de0e971df3e51fcd8',
 
 module.exports = app;
