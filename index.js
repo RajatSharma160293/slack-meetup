@@ -5,14 +5,14 @@ var app = require('./app.js');
  * Get port from environment and store in Express.
  */
 var port = normalizePort('3000');
-app.set('port', port);
+// app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
 var server = http.createServer(app);/** * Listen on provided port, on all network interfaces. */
-server.listen(port);
+server.listen(process.env.PORT || port);
 server.on('error', onError);
 server.on('listening', onListening);
 
