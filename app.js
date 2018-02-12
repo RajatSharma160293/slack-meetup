@@ -13,7 +13,7 @@ app.post('/slack/slash-commands/send-me-buttons', urlencodedParser, (req, res) =
     res.status(200).end() // best practice to respond with empty 200 status code
     var reqBody = req.body
     var responseURL = reqBody.response_url
-    if (reqBody.token != '3mjnNXTEIxqWOkmjpnhEBlGn'){
+    if (reqBody.token != YOUR_TOKEN){
         res.status(403).end("Access forbidden")
     }else{
         var message = {
@@ -116,7 +116,7 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
         ]
       }];
       var message = {
-        token: 'xoxp-253912083681-289504108851-313557509410-da9fa0e44c8b105de0e971df3e51fcd8',
+        token: LEGACY_TOKEN,
         channel: '#dummy-app',
         as_user: true,
         username: "Meetup App",
@@ -139,10 +139,8 @@ app.post('/slack/slash-commands/meeting-response', urlencodedParser, (req, res) 
               console.log(error);
           }
       })
-      // sendMessageToSlackResponseURL(responseURL, JSON.stringify(message))
     }
 })
 
-//'xoxp-253912083681-289504108851-313557509410-da9fa0e44c8b105de0e971df3e51fcd8',
 
 module.exports = app;
